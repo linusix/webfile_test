@@ -41,35 +41,12 @@
 
 <script type="text/javascript">
 var _mobileAppName = "EDUWILL_STUDY_IOS";
-
-$(function(){
-	$(".btn_category").click(function(e){
-		$("#category").touchScrollMenu();
-		e.preventDefault();
-	});
-
-	$("#wrap").css({ pointerEvents : "none" });
-	setTimeout(function(){
-		$("#wrap").css({ pointerEvents : "" });
-	}, 800);
-});
 </script>
 <link rel="stylesheet" href="https://img.eduwill.net/resources/brand/live/css/contents.css?202204131" /><!-- css for contents -->
 <link rel="stylesheet" type="text/css" href="https://img.eduwill.net/resources/brand/live/css/app_ui.css?20220413_v1" />
 <script>document.domain = "eduwill.net";</script>
 
-<link rel="stylesheet" href="//img.eduwill.net/resources/eco/library/eduwill.eco-2.0.0.css" type="text/css">
-	<script type="text/javascript" src="//img.eduwill.net/resources/eco/library/eduwill.eco-2.1.0.min.js"></script>
-	<link rel="stylesheet" href="//img.eduwill.net/resources/ibm/front/live/css/ibm.css">
-	<script type="text/javascript" src="//jarvis-lib.eduwill.net/ibm/jarvis-ibm-v1.0.min.js"></script>
 
-	<script type="text/javascript" src="//img.eduwill.net/eduwill/live/libs/slick/slick.js"></script>
-	<script type="text/javascript">
-	$( document ).ready(function() {
-	    var bannerHandler = new Jarvis.Ibm.BannerHandler();
-	    bannerHandler.init();
-	});
-	</script>
 <!-- Google Tag Manager (2018.04.30 khlee2)-->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -173,18 +150,11 @@ function handleImgFileSelect(e){
 
 				 var reader = new FileReader();
 		         reader.onload = function (e1) {
-		         	$('#fileViewers').append('<div class=\"file\" id=\"viewer_file'+(index+1)+'\" ><a href=\"javascript:;\" name=\"removeImg\" data-index=\"'+index+'\" ><img id=\"img_path_file'+(index+1)+'\" alt=\"file\" src=\"'+'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAG1BMVEUAmf/////f8v8/sv+/5f8fpf9fv/+f2P9/zP/IhCA+AAAAiklEQVRYhe3QMQ6EIBAF0C+GSInF9mYTs+1ewRsQbmBlayysKefYO2asXbbYxvxHQj6ECQMAEREREf2NQ/fCtp5Zky6vtRMkSJEzhyISynWJnzH6Z8oQlzS7lEc/fLmmQUSvc16OrCPqRl1JePxQYo1ZSWVj9nxrrOb5esw+eXdvzTWfTERERHRXH4tWFZGswQ2yAAAAAElFTkSuQmCC'+'\" onerror=\"javascript:this.src=\"https://img.eduwill.net/resources/brand/live/images/hard/thumb_file.png\"></a></div>');
+		         	$('#fileViewers').append('<div class=\"file\" id=\"viewer_file'+(index+1)+'\" ><a href=\"javascript:;\" name=\"removeImg\" data-index=\"'+index+'\" ><img id=\"img_path_file'+(index+1)+'\" alt=\"file\" src=\"'+e1.target.result+'\" onerror=\"javascript:this.src=\"https://img.eduwill.net/resources/brand/live/images/hard/thumb_file.png\"></a></div>');
 		         	index++;
-		         }
-		         // reader.onload = function (e1) {
-		         // 	$('#fileViewers').append('<div class=\"file\" id=\"viewer_file'+(index+1)+'\" ><a href=\"javascript:;\" name=\"removeImg\" data-index=\"'+index+'\" ><img id=\"img_path_file'+(index+1)+'\" alt=\"file\" src=\"'+e1.target.result+'\" onerror=\"javascript:this.src=\"https://img.eduwill.net/resources/brand/live/images/hard/thumb_file.png\"></a></div>');
-		         // 	index++;
-		         // }		         
-
-		         
+		         }		         
 
 		         reader.readAsDataURL(f);
-
 			});
 		}
 
