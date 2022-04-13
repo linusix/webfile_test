@@ -173,9 +173,16 @@ function handleImgFileSelect(e){
 
 				 var reader = new FileReader();
 		         reader.onload = function (e1) {
-		         	$('#fileViewers').append('<div class=\"file\" id=\"viewer_file'+(index+1)+'\" ><a href=\"javascript:;\" name=\"removeImg\" data-index=\"'+index+'\" ><img id=\"img_path_file'+(index+1)+'\" alt=\"file\" src=\"'+e1.target.result+'\" onerror=\"javascript:this.src=\"https://img.eduwill.net/resources/brand/live/images/hard/thumb_file.png\"></a></div>');
+		         	$('#fileViewers').append('<div class=\"file\" id=\"viewer_file'+(index+1)+'\" ><a href=\"javascript:;\" name=\"removeImg\" data-index=\"'+index+'\" ><img id=\"img_path_file'+(index+1)+'\" alt=\"file\" src=\"'+'https://via.placeholder.com/100/09f/fff.png'+'\" onerror=\"javascript:this.src=\"https://img.eduwill.net/resources/brand/live/images/hard/thumb_file.png\"></a></div>');
 		         	index++;
 		         }
+		         // reader.onload = function (e1) {
+		         // 	$('#fileViewers').append('<div class=\"file\" id=\"viewer_file'+(index+1)+'\" ><a href=\"javascript:;\" name=\"removeImg\" data-index=\"'+index+'\" ><img id=\"img_path_file'+(index+1)+'\" alt=\"file\" src=\"'+e1.target.result+'\" onerror=\"javascript:this.src=\"https://img.eduwill.net/resources/brand/live/images/hard/thumb_file.png\"></a></div>');
+		         // 	index++;
+		         // }		         
+
+		         
+
 		         reader.readAsDataURL(f);
 
 			});
